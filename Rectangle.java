@@ -1,25 +1,39 @@
 // Rectangle class definition
 public class Rectangle {
 
-   // instance variables, the object data stored with each object:
+    // instance variables
     private int length;
     private int width;
-
-   // the constructor used to create Rectangle objects:
-   // instance variables are set here using the values passed as arguments
+ 
+    // constructor method for creating Rectangle objects;
+    // instance variables are set here using the values passed as arguments
     public Rectangle(int len, int wid) {
         length = len;
         width = wid;
-   }
-
-   // a method (object behavior) that calculates and prints area:
+    }
+ 
+    // method that calculates and returns area
+    public int calculateArea() {
+        return length * width;
+    }
+ 
+    // method that calculates and prints area
     public void printArea() {
-        int area = length * width;
+        int area = calculateArea();
         System.out.println("My area is " + area);
     }
-
-    public void printPerimeter() {
-        int perimeter = length * 2 + width * 2;
-        System.out.println("My perimeter is " + perimeter);
+ 
+    // method that calculates and returns volume
+    // of a box with length, width, and height
+    public double calculateBoxVolume(double height) {
+        return calculateArea() * height;
     }
-}
+ 
+    // method that calculates and prints volume
+    // of a box with length, width, and height
+    public void printBoxVolume(double height) {
+        double volume = calculateBoxVolume(height);
+        System.out.println("The volume is: " + volume);
+    }
+ }
+ 
